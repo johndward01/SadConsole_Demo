@@ -10,8 +10,8 @@ namespace MyProject
     class Program
     {
 
-        public const int Width = 80;
-        public const int Height = 25;
+        public const int Width = 120;
+        public const int Height = 60;
 
         static void Main(string[] args)
         {
@@ -21,11 +21,7 @@ namespace MyProject
             // Hook the start event so we can add consoles to the system.
             SadConsole.Game.OnInitialize = Init;
 
-            // Start the game.
-
-            // TODO: Uncomment the Run() method below
-
-            //SadConsole.Game.Instance.Run();
+            SadConsole.Game.Instance.Run();
             SadConsole.Game.Instance.Dispose();
         }
 
@@ -33,12 +29,9 @@ namespace MyProject
         {
             // Any startup code for your game. We will use an example console for now
             var startingConsole = SadConsole.Global.CurrentScreen;
-
-            // TODO: Uncomment the method below to call the FillWithRandomGarbage() method
-
-            //startingConsole.FillWithRandomGarbage();
-            startingConsole.Fill(new Rectangle(3, 3, 27, 5), null, Color.Black, 0, SpriteEffects.None);
-            startingConsole.Print(6, 5, "Hello SadConsole!", ColorAnsi.CyanBright);
+            startingConsole.FillWithRandomGarbage();
+            startingConsole.Fill(new Rectangle(33, 15, 60, 30), null, Color.Black, 0, SpriteEffects.None);
+            startingConsole.Print(55, 30, "Hello SadConsole!", ColorAnsi.CyanBright);
         }
     }
 }
